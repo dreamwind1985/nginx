@@ -204,11 +204,11 @@ main(int argc, char *const *argv)
 
     ngx_debug_init();
 
-    if (ngx_strerror_init() != NGX_OK) {
+    if (ngx_strerror_init() != NGX_OK) { /* 将系统定义的错误信息保存到nginx自己的数组中*/
         return 1;
     }
 
-    if (ngx_get_options(argc, argv) != NGX_OK) {
+    if (ngx_get_options(argc, argv) != NGX_OK) { /* 读取参数并保存 */
         return 1;
     }
 
